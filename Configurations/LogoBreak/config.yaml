@@ -1,0 +1,43 @@
+modules:
+  pressure: DFSPH
+  adaptive: false
+  rayTracing: true
+  error_checking: true
+  drag: Gissler17
+  resorting: compactMLM
+  support: constraineds
+  neighborhood: constrained
+adaptive:
+  resolution: 32
+  delay: 1
+color_map:
+  auto: 0
+  buffer: velocity
+  min: 0
+  max: 30
+  map: viridis
+  map_flipped: 0
+
+particle_volumes:
+  volume:
+    -   fileName: Volumes/Fluid.vdb
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/Font.vdb
+        kind: 2
+particle_settings:
+  radius: 0.5
+render_settings:
+  camera_position: [-41.8944, -41.2304, 24.0795]
+  camera_angle: [174.5, 0, -335.5]
+simulation_settings:
+  densitySteps: 5
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz-
+  domainWalls: x+-y+-z-
+  maxNumptcls: 3009000
+  auto_boundary: 'true'
+  boundaryDampening: 0.999
+  timestep_min: 0.0001
+  timestep_max: 0.006
+  neighborlimit: 100

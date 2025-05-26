@@ -1,0 +1,27 @@
+{
+	"functions": {
+		"iisph17_pressure_mirroring_d": {
+			"description": "Module used to implement an Implicit Incompressible SPH (IISPH) Solver modified from the updated IISPH paper. Pressure Mirroring decoupled",
+			"folder": "pressure",
+			"name": "IISPH17_PRESSURE_MIRRORING_D",
+			"target": "cuda",
+			"units": true,
+			"cell_info": true,
+			"virtual_info": true,
+			"boundaryInfo": true,
+			"neighbor_info": true,
+			"functions": [ "pressure_solve", "print_velocity", "print_begin" ],
+			"depends_any": [ { "modules::pressure": "IISPH17_PRESSURE_MIRRORING_D" } ],
+			"parameters": [ "eta", "iterations", "density_error", "gamma", "beta", "num_ptcls_fluid" ],
+			"input": [ "density", "density_f", "density_b", "volume", "particle_type", "rigidDensities", "uid" ],
+			"temporary": [ "_apparentVolume", "_Aii", "_volumeError", "_omega", "_predictedAcceleration", "acceleration_inter" ],
+			"output": [ "position", "acceleration", "velocity", "_sourceTerm" ],
+			"swap": [ "pressure" ]
+		}
+	},
+	"arrays": {
+
+	},
+	"uniforms": {
+	}
+}    

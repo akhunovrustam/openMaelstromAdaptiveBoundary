@@ -1,0 +1,191 @@
+{
+  "modules": {
+    "alembic": false,
+    "pressure": "DFSPH",
+    "volumeBoundary": true,
+    "adaptive": false,
+    "viscosity": false,
+    "rayTracing": true,
+    "error_checking": true,
+    "drag": "none",
+    "debug": false,
+    "vorticityd": "constrained",
+    "resorting": "compactMLM",
+    "support": "constraineds",
+    "neighborhood": "constrained",
+    "volumeOutlets": true
+  },
+  "surfaceDistance": {
+    "level_limit": "-10.f"
+  },
+  "adaptive": {
+    "resolution": 64,
+    "distance": "3.0 3.0 3.0",
+    "delay": 1.0,
+    "blendsteps": 15,
+    "limit": -20.0
+  },
+  "color_map": {
+    "auto": 1,
+    "vbuffer": "velocity",
+    "buffer": "angularVelocity",
+    "map_flipped": 1,
+    "min": 0,
+    "max": 25,
+    "map": "RdBu"
+  },
+  "particle_volumes": {
+    "volume1": {
+      "file": "Objects/Domain.vdb",
+      "concentration": 0.0,
+      "timeToEmit": 0.0,
+      "kind": "vdb"
+    }
+  },
+    "inlet_volumes": {
+      "volume1": {
+        "file": "Volumes/Inlet.vdb",
+        "dur": -1,
+        "delay": 0.0,
+        "vel": "0 -64 0 0"
+      }
+    },
+    "outlet_volumes": {
+      "volume1": {
+        "file": "Volumes/Outlet.vdb",
+        "rate": 780000
+      }
+    },
+    "boundary_volumes": {
+      "volume1": {
+        "file": "Volumes/obstacle.vdb",
+        "kind": 2
+      }
+    },
+  "particle_settings": {
+    "radius": 0.05,
+    "viscosity": 0.05,
+    "boundaryViscosity": 0,
+    "xsph_viscosity": 0.0
+  },
+  "vorticitySettings": {
+    "viscosityOmega": 0.025,
+    "vorticityCoeff": 0.25
+  },
+    "rtxScene": {
+      "box1": {
+        "maxPosition": "FLT_MAX FLT_MAX -1",
+        "minPosition": "-FLT_MAX -FLT_MAX -4",
+        "emission": "0 0 0",
+        "color": "0.2 0.2 0.2",
+        "material": 0
+      },
+      "box3": {
+        "maxPosition": "-151 FLT_MAX FLT_MAX",
+        "minPosition": "-502 -FLT_MAX -FLT_MAX",
+        "emission": "0 0 0",
+        "color": "1 1 1",
+        "material": 0
+      },
+      "box2": {
+        "maxPosition": "256 180 192",
+        "minPosition": "-30 -175 -192",
+        "emission": "1 1 1",
+        "color": "1 1 1",
+        "material": 0
+      },
+      "sphere1": {
+        "position": "0 0 -1060",
+        "radius": "10000",
+        "emission": "0.55 0.55 0.55",
+        "color": "0.075 0.075 0.075",
+        "material": 0
+      },
+      "sphere2": {
+        "position": "-96 0 66",
+        "radius": "32",
+        "emission": "0 0 0",
+        "color": "1 1 1",
+        "material": 3
+      },
+      "sphere3": {
+        "position": "-96 72 58",
+        "radius": "32",
+        "emission": "0 0 0",
+        "color": "0.5 0 0",
+        "material": 0
+      },
+      "sphere4": {
+        "position": "-96 64 124",
+        "radius": "32",
+        "emission": "0 0 0",
+        "color": "1 1 1",
+        "material": 4
+      }
+    },
+  "render_settings": {
+    "vrtxWmin": 0.586,
+    "vrtxR": 0.08,
+    "anisotropicKs": 1.0,
+    "anisotropicKr": 4.158416,
+    "anisotropicKn": 0.278607,
+    "anisotropicLambda": 0.980198,
+    "anisotropicNepsilon": "24",
+    "apertureRadius": "0.f",
+    "vrtxFluidBias": "0.025f",
+    "focalDistance": "120.f",
+    "vrtxRenderFluid": "1",
+    "vrtxRenderGrid": "0",
+    "vrtxRenderSurface": "0",
+    "vrtxNeighborLimit": 0,
+    "vrtxRenderNormals": "0",
+    "renderSteps": 26,
+    "bvhColor": "0.566 0.621 0.641",
+    "floorRender": 0,
+    "vrtxRenderBVH": "0",
+    "vrtxBHVMaterial": "0",
+    "vrtxRenderMode": "0",
+    "vrtxDisplayStats": "0",
+    "vrtxMaterialg": "4",
+    "vrtxBouncesg": "10",
+    "vrtxMaterial": "0",
+    "vrtxBounces": "10",
+    "vrtxDebeerScale": "0.056",
+
+    "vrtxDomainEpsilon": "-1.25",
+    "vrtxBVHMaterial": "1",
+    "vrtxFluidColor3": "0.31 0.448 0.897",
+    "vrtxFluidColor": "0.897 0.917 1",
+    "vrtxFluidColor2": "0.05098 0.23137 0.494177",
+    "vrtxIOR": "1.3f",
+    "internalLimit": 40.0,
+    "camera_positions": "196.5 2.03258e-06 91",
+    "camera_angles": "180 0 -90",
+    "resolution": "1920 1080",
+    "camera_positiond": "52.8584 -87.4441 27.4224",
+    "camera_angled": "180 0 315",
+
+    "axesRender": 0,
+    "vrtxRenderDomainMin": "-40 -130 0",
+    "vrtxRenderDomainMax": "40 100 200",
+    "vrtxFlipCameraUp": "1",
+    "render_clamp": "0 0 0.5",
+    "camera_position": "-0.0722504 -13.0511 21.471 ",
+    "camera_angle": "90 0 0",
+
+    "gl_file": "adapt_break2.mp4"
+  },
+    "simulation_settings": {
+      "densitySteps": 5,
+      "boundaryObject": "Objects/domain.obj",
+      "domainWall": "xyz-",
+      "domainWalls": "x+-y+-z+-",
+      "numptcls": 2490000,
+      "auto_boundary": "true",
+      "boundaryDampening": 0.999,
+      "timestep_min": 0.00005,
+      "timestep_max": 0.0002,
+      "neighborlimit": 120,
+      "external_force": "0 0 0 0"
+    }
+  }

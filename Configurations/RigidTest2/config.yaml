@@ -1,0 +1,73 @@
+modules:
+  adaptive: true
+  rayTracing: true
+  anisotropicSurface: false
+  surfaceDetection: true
+  drag: Gissler17
+  vorticity: Bender17
+  tension: Akinci
+  resorting: compactMLM
+  support: constrained
+  neighborhood: constrained
+simulation_settings:
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz+
+  domainWalls: x+-y+-z-
+  maxNumptcls: 7001000
+  boundaryDampening: 0.999
+  timestep_min: 0.001
+  timestep_max: 0.005
+  neighborlimit: 125
+
+particle_settings:
+  radius: 0.5
+  boundaryViscosity: 0.00
+  xsph_viscosity: 0.075
+
+adaptive:
+  resolution: 16
+color_map:
+  auto: 1
+  buffer: volume
+  min: 0
+  max: 35
+  map: gist_heat
+  map_flipped: 1
+  mapping_mode: linear
+
+particle_volumes:
+  volume:
+    -   fileName: Volumes/FluidA.vdb
+boundary_volumes:
+  volume:
+    -  fileName: Volumes/box3.vdb
+       kind: 2
+
+render_settings:
+  camera_positiond: [-61.3619, -81.1615, 45.419]
+  camera_angled: [167.5, 0, 37]
+  camera_position3: [-36.3099, -70.0819, 68.8255]
+  camera_angle3: [143.5, 0, 37.5]
+  vrtxDisplayStats: 0
+  vrtxWMins: 0.35355
+  vrtxWMaxs: 0.25444
+  vrtxRs: 0.46006  
+  camera_positioni: [0,0,5]
+  camera_anglei: [180,0,-90]
+  vrtxRenderDomainMin: [-100, -100, -0.25]
+  vrtxRenderSurface: 1
+  vrtxRenderBVH: 1
+  render_marching: false
+  apertureRadius: 0.3
+  camera_positions: [0.014267, -111.874, 53.8688]
+  camera_angles: [180, 0, 0]
+  camera_position: [-0.582192, -98.3365, 102.165]
+  camera_angle: [153.5, 0, 0]
+  vrtxBounces: 25
+  vrtxMaterial: 4
+  vrtxDebeerScale: 0.005
+  vrtxR: 0.15936
+  vrtxWMin: 0.46215
+  vrtxWMax: 0.28685
+  vrtxFluidBias: 0.1
+  vrtxFluidColor: [1,1,1]

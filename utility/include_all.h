@@ -1,0 +1,29 @@
+#pragma once 
+#include <utility/identifier.h>
+#include <utility/cuda.h>
+#include <vector_types.h>
+#include <utility/macro.h>
+#ifndef OLD_STYLE
+#include <math/kernels.h>
+#else
+#include <utility/math/kernels.h>
+#endif
+#include <utility/cuda/error_handling.h>
+#include <utility/cuda/cache.h>
+#include <utility/launcher.h>
+#include <math/unit_math.h>
+#include <math/math.h>
+#include <utility/atomic.h>
+#include <utility/algorithm.h>
+#include <utility/cuda.h>
+#include <type_traits>
+#include <math/template/tuple_for_each.h>
+#include <iostream>
+#include <tools/timer.h>
+#include <tools/log.h>
+#include <utility/SPH.h>
+#include <cuda_runtime.h>
+#include <utility/SPH/boundaryFunctions.h>
+#include <utility/SPH.h>
+#include <utility/iterator.h>
+//#include <utility/sdf.h>

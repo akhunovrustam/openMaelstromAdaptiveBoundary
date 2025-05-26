@@ -1,0 +1,70 @@
+modules:
+  pressure: DFSPH
+  adaptive: false
+  gl_record: false
+  rayTracing: true
+  anisotropicSurface: false
+  surfaceDetection: false
+  error_checking: true
+  debug: false
+  drag: Gissler17
+  vorticity: Liusa
+  resorting: compactMLM
+  support: constraineds
+  hash_width: 64bit
+  neighborhood: constrained
+simulation_settings:
+  densitySteps: 5
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz-
+  domainWalls: x+-y+-z-
+  maxNumptcls: 8910000
+  auto_boundary: 'true'
+  boundaryDampening: 0.999
+  timestep_min: 0.001
+  timestep_max: 0.006
+  neighborlimit: 65
+
+particle_settings:
+  boundaryViscosity: 0.1
+  tension_akinci: 0.25
+  tension: 0.25
+  gravity: 9.81
+  radius: 0.6203504908994
+  density: 998
+color_map:
+  auto: 0
+  min: 0
+  max: 45
+  buffer: velocity
+  visualizeDirection: 0
+  vectorMode: length
+  map: magma
+  map_flipped: 0
+  mapping_mode: linear
+
+inlet_volumes:
+  volume:
+    -   fileName: Volumes/FluidInlet.vdb
+        duration: 125
+        emitter_velocity: [0, 30, 0, 0]
+outlet_volumes:
+  volume:
+    -   fileName: Volumes/FluidOutlet.vdb
+        rate: -1
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/River.vdb
+        kind: 2
+
+render_settings:
+  vrtxWmin: 0.524
+  vrtxR: 0.35
+  vrtxWMax: 0.1
+  camera_position: [0, 0, 460]
+  camera_angle: [90, 0, 0]
+  vrtxFlipCameraUp: 1
+  bvhColor: [0.6941, 0.651, 0.5333]
+  vrtxFluidColor: [0.3059, 0.349, 0.4667]
+  vrtxRenderDomainMin: [-200, -505, -200]
+  vrtxRenderDomainMax:    [200, 505, 550]

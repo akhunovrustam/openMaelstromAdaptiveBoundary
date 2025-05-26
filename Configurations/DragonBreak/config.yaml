@@ -1,0 +1,72 @@
+modules:
+  adaptive: false
+  rayTracing: true
+  anisotropicSurface: true
+  error_checking: true
+  drag: Gissler17
+  resorting: compactMLM
+  tension: Akinci
+  support: constrained
+  neighborhood: constrained
+surfaceDistances:
+  distanceFieldDistances: [0.0, 0.0, 1.5]
+adaptive:
+  resolution: 256
+  delay: 1.0
+  adaptivityScalings: 0.8
+color_map:
+  autoScaling: 0
+  buffer: velocity
+  min: 0
+  max: 30
+  map: gist_heat
+  map_flipped: 0
+  mapping_mode: linear
+color_maps:
+  auto: 1
+  buffer: volume
+  min: 0
+  max: 35
+  map: gist_heat
+  map_flipped: 1
+  mapping_mode: linear
+particle_volumes:
+  volume:
+    -   fileName: Volumes/DamBreak.vdb
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/Dragon2.vdb
+        kind: 2
+particle_settings:
+  tension_akinci: 0.15
+  boundaryViscositys: 0.00
+  xsph_viscositys: 0.1
+  radius: 0.5
+render_settings:
+  camera_position: [-53.5613, -84.7356, 56.4722]
+  camera_angle: [164, 0, 48.5]
+  camera_position2: [117, 0, 51.5]
+  camera_angle2: [180, 0, -90]
+
+  camera_positionc: [10.7491, 20.152, 33.0091]
+  camera_anglec: [135, 0, -49.5]
+  vrtxRenderBVH: 1
+  apsertureRadius: 0
+  vrtxRenderSurface: 0
+  vrtxDisplayStats: 0
+  camera_positionc: [-42.4093, -65.8153, 75.834]
+  camera_anglec: [149.5, 0, 23]
+  camera_fovc: 22.343
+  vrtxFluidColor: [0.2, 0.2, 0.2]
+
+
+simulation_settings:
+  boundaryObject: Objects/domainL.obj
+  domainWall: xyz-
+  domainWalls: x+-y+-z+-
+  maxNumptcls: 819000
+  auto_boundary: 'true'
+  boundaryDampening: 0.999
+  timestep_min: 0.001
+  timestep_max: 0.008
+  neighborlimit: 120

@@ -1,0 +1,38 @@
+{
+	"functions": {
+		"iisph17_pressure_boundaries_decoupled": {
+			"description": "Module used to implement an Implicit Incompressible SPH (IISPH) Solver modified from the updated IISPH paper.",
+			"folder": "pressure",
+			"name": "IISPH17_PRESSURE_BOUNDARIES_D",
+			"target": "cuda",
+			"units": true,
+			"cell_info": true,
+			"virtual_info": true,
+			"boundaryInfo": true,
+			"neighbor_info": true,
+			"depends_any": [ { "modules::pressure": "IISPH17_PRESSURE_BOUNDARIES_D" } ],
+			"functions": [ "pressure_solve", "divergence_solve" ],
+			"parameters": [ "eta", "iterations", "density_error", "gamma", "beta" ],
+			"input": [ "position", "density", "density_f", "density_b", "volume", "particle_type", "rigidDensities", "uid" ],
+			"temporary": [
+				"_apparentVolume",
+				"_Aii",
+				"_volumeError",
+				"_omega",
+				"_predictedAcceleration",
+				"acceleration_inter"
+			],
+			"output": [
+				"acceleration",
+				"velocity",
+				"_sourceTerm"
+			],
+			"swap": [ "pressure" ]
+		}
+	},
+	"arrays": {
+
+	},
+	"uniforms": {
+	}
+}    

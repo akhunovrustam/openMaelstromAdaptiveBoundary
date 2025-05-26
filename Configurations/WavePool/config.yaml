@@ -1,0 +1,69 @@
+modules:
+  adaptive: true
+  movingBoundaries: true
+  rayTracing: true
+  surfaceDetection: true
+  anisotropicSurface: false
+  error_checking: true
+  resorting: compactMLM
+  support: constrained
+  neighborhood: constrained
+adaptive:
+  resolution: 32
+  delay: 0.2
+
+ssurfaceDistance:
+    surface_distanceFieldDistances: [0.5,0.5,0.5]
+
+color_map:
+  auto: 1
+  buffer: volume
+  min: 0
+  max: 30
+  map: viridis
+  map_flipped: 1
+  mapping_mode: linear
+
+inlet_volumes: 
+  volume: 
+    -   fileName: "Volumes/Inlet.vdb"
+        duration: 20
+        emitter_velocity: [0, 30, 0, 0]
+particle_volumes:
+  volume:
+    -   fileName: Volumes/Fluid.vdb
+moving_plane:
+  plane:
+    -   plane_position: [0, -75, 0]
+        plane_normal: [0, -1, 0]
+        plane_direction: [0, 1, 0]
+        magnitude: 20
+        frequency: 0.1
+boundary_volumess:
+  volume:
+    -   fileName: Volumes/InletBox.vdb
+        kind: 2
+particle_settings:
+  sboundaryViscosity: 0.0
+  tension_akinci: 0.15
+  radius: 0.5
+render_settings:
+  dcamera_position: [59.5769, -22.7472, 54.6092]
+  dcamera_angle: [157, 0, -59]
+  vrtxFluidColor: [1, 1, 1]
+  vrtxRenderSurface: 0
+  focalDistance: 58
+  vrtxDisplayStats: 0
+  camera_position: [75.2359, -35.2583, 52.6297]
+  camera_angle: [161, 0, -60.5]
+
+
+simulation_settings:
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz-
+  domainWalls: x+-y-z-
+  maxNumptcls: 7090000
+  timestep_min: 0.001
+  timestep_max: 0.004
+  neighborlimit: 120
+  external_force: [0, 0, -9.8, 0]

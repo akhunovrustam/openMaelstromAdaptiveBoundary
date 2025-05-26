@@ -1,0 +1,59 @@
+modules:
+  alembic: false
+  pressure: DFSPH
+  adaptive: false
+  rayTracing: true
+  anisotropicSurface: false
+  error_checking: true
+  drag: Gissler17
+  vorticity: Bender17
+  resorting: compactMLM
+  tension: Akinci
+  support: constrained
+  neighborhood: constrained
+
+simulation_settings:
+  boundaryObject: Objects/domain.obj
+  domainWalls: x+-y-z-
+  maxNumptcls: 7810000
+  unumptcls: 275000
+  auto_boundary: 'true'
+  boundaryDampening: 0.999
+  timestep_min: 0.001
+  timestep_max: 0.006
+  neighborlimit: 125
+
+moving_plane:
+  plane:
+    -   plane_position: [0, -85, 0]
+        plane_normal: [0, -1, 0]
+        plane_direction: [0, 1, 0]
+        magnitude: 20
+        frequency: 0.1
+
+particle_settings:
+  radius: 0.5
+surfaceDistance:
+  level_limit: -15.0
+adaptive:
+  resolution: 80
+
+color_map:
+  auto: 0
+  min: 0
+  max: 30
+  buffer: velocity
+  visualizeDirection: 0
+  map: viridis
+
+particle_volumes:
+  volume:
+    -   fileName: Volumes/Fluid.vdb
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/Boxes.vdb
+        kind: 2
+
+render_settings:
+  camera_position: [94.5453, 57.387, 30.0411]
+  camera_angle: [156.5, 0, -111.5]

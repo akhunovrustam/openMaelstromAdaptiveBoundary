@@ -1,0 +1,96 @@
+modules:
+  pressure: DFSPH
+  volumeBoundary: true
+  adaptive: false
+  rayTracing: true
+  anisotropicSurface: false
+  surfaceDetection: true
+  drag: Gissler17
+  vorticity: Bender17
+  tension: Akinci
+  resorting: compactMLM
+  support: constrained
+  neighborhood: constrained
+simulation_settings:
+  densitySteps: 5
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz+
+  domainWalls: x+-y+-z+-
+  maxNumptcls: 3601000
+  auto_boundary: 'true'
+  boundaryDampening: 0.999
+  timestep_min: 0.001
+  timestep_max: 0.004
+  neighborlimit: 125
+
+particle_settings:
+  viscosity: 5
+  boundaryViscosity: 0.0375
+  tension_akinci: 0.15
+  tension: 0.1
+  gravity: 9.81
+  radius: 0.5
+  density: 998
+
+adaptive:
+  resolution: 64
+  delay: 1.0
+alembics:
+  fps: 24
+color_maps:
+  auto: 1
+  buffer: volume
+  min: 0
+  max: 35
+  map: gist_heat
+  map_flipped: 1
+  mapping_mode: linear
+color_map:
+  autoScaling: 0
+  buffer: velocity
+  min: 0
+  max: 30
+  visualizeDirection: 0
+  map: viridis
+  map_flipped: 0
+  mapping_mode: linear
+particle_volumes:
+  volume:
+    -   fileName: Volumes/FluidA.vdb
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/box3.vdb
+        position: [0, -20, 5]
+    -   fileName: Volumes/box3.vdb
+        position: [0, -6.667, 5]
+    -   fileName: Volumes/box3.vdb
+        position: [0, 6.667, 5]
+    -   fileName: Volumes/box3.vdb
+        position: [0, 20, 5]
+    -   fileName: Volumes/box3.vdb
+        position: [0, 0, 15.1]
+    -   fileName: Volumes/box3.vdb
+        position: [0, 13.336, 15.1]
+    -   fileName: Volumes/box3.vdb
+        position: [0, -13.336, 15.1]
+    -   fileName: Volumes/box3.vdb
+        position: [0, 6.6667, 25.2]
+    -   fileName: Volumes/box3.vdb
+        position: [0, -6.6667, 25.2]
+    -   fileName: Volumes/box3.vdb
+        position: [0, 0, 35.3]
+
+render_settings:
+  camera_position: [13.5, 127, 56.5]
+  camera_angle: [180, 0, -180]
+  vrtxWMin: 0.35355
+  vrtxWMax: 0.25444
+  vrtxR: 0.46006
+  vrtxDisplayStats: 0
+  vrtxRenderSurface: 0
+  vrtxRenderDomainMax: [100, 200, 200]
+  vrtxRenderDomainMin: [-100, -40, 0]
+  vrtxFluidColor: [0.3059, 0.349, 0.4667]
+
+  apertureRadius: 0.25
+  focalDistance: 150

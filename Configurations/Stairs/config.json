@@ -1,0 +1,96 @@
+{
+  "modules": {
+    "adaptive": false,
+    "viscosity": false,
+    "rayTracing": true,
+    "anisotropicSurface": true,
+    "surfaceDetection": true,
+    "error_checking": true,
+    "resorting": "compactMLM",
+    "support": "constrained",
+    "neighborhood": "constrained"
+  },
+  "surfaceDistance": {
+    "distanceFieldDistances": "0.0 0.0 1.5",
+    "level_limit": "-5.f"
+  },
+  "adaptive": {
+    "resolution": 32,
+    "delay": 1.0
+  },
+  "color_map": {
+    "auto": 1,
+    "buffer": "lifetime",
+    "min": 0,
+    "max": 30,
+    "map": "magma",
+    "map_flipped": 1
+  },
+  "inlet_volumes": {
+    "volume1": {
+      "file": "Volumes/Fluid.vdb",
+      "dur": 10,
+      "delay": 0.0,
+      "vel": "0 20 0 0"
+    }
+  },
+  "boundary_volumes": {
+    "volume1": {
+      "file": "Volumes/pillars.vdb",
+      "kind": 2
+    }
+  },
+  "particle_settings": {
+    "radius": 0.5
+  },
+  "rtxScene": {
+    "box1": {
+      "maxPosition": "FLT_MAX FLT_MAX -53",
+      "minPosition": "-FLT_MAX -FLT_MAX -55",
+      "emission": "0 0 0",
+      "color": "0.2 0.2 0.2",
+      "material": 0
+    },
+    "box3": {
+      "maxPosition": "-151 FLT_MAX FLT_MAX",
+      "minPosition": "-502 -FLT_MAX -FLT_MAX",
+      "emission": "0 0 0",
+      "color": "1 1 1",
+      "material": 0
+    },
+    "box2": {
+      "maxPosition": "192 192 192",
+      "minPosition": "190 -192 -192",
+      "emission": "1 1 1",
+      "color": "1 1 1",
+      "material": 0
+    },
+    "sphere1": {
+      "position": "0 0 -1060",
+      "radius": "10000",
+      "emission": "0.55 0.55 0.55",
+      "color": "0.075 0.075 0.075",
+      "material": 0
+    }
+  },
+  "render_settings": {
+    "anisotropicKs": 4.000000,
+    "anisotropicKr": 4.000000,
+    "anisotropicKn": 0.188806,
+
+    "render_clamp": "0 0 0",
+    "camera_position": "70.7539 39.5768 60.3006",
+    "camera_angle": "160.5 0 -124",
+    "resolution": "1920 1080",
+    "gl_file": "adapt_break2.mp4"
+  },
+  "simulation_settings": {
+    "boundaryObject": "Objects/domain.obj",
+    "domainWalls": "x+-y+-z+-",
+    "numptcls": 3709000,
+    "boundaryDampening": 0.999,
+    "timestep_min": 0.0001,
+    "timestep_max": 0.006,
+    "neighborlimit": 120
+  }
+}

@@ -1,0 +1,60 @@
+modules:
+  pressure: DFSPH
+  adaptive: false
+  rayTracing: true
+  anisotropicSurface: false
+  error_checking: false
+  surfaceDetection: true
+  drag: Gissler17
+  vorticity: Bender17
+  resorting: compactMLM
+  tension: Akinci
+  support: constraineds
+  neighborhood: constrained
+
+adaptive:
+  resolution: 128
+  delay: 1.2
+color_map:
+  auto: 0
+  buffer: velocity
+  visualizeDirection: 0
+  autoScaling: 0
+  min: 0
+  max: 30
+  map: viridis
+  map_flipped: 0
+  mapping_mode: linear
+
+particle_volumes:
+  volume:
+    -   fileName: Volumes/DamBreak.vdb
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/Pillars.vdb
+        kind: 2
+
+particle_settings:
+  tension_akinci: 0.15
+  boundaryViscosity: 0
+  radius: 0.1
+
+render_settings:
+  scamera_position: [4, -100, 70]
+  scamera_angle: [180, 0, 0]
+  camera_position: [4, -79.8143, 112.608]
+  camera_angle: [144, 3.3421e-42, 0]
+  vrtxDisplayStats: 0
+  vrtxRenderSurface: 0
+
+
+simulation_settings:
+  boundaryObject: Objects/domainL.obj
+  domainWall: xyz-
+  domainWalls: x+-y+-z-
+  maxNumptcls: 8809000
+  auto_boundary: 'true'
+  boundaryDampening: 0.999
+  timestep_min: 0.0005
+  timestep_max: 0.002
+  neighborlimit: 75

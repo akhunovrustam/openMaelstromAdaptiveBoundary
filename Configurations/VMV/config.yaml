@@ -1,0 +1,66 @@
+modules:
+  alembic: false
+  pressure: DFSPH
+  surfaceDistance: false
+  volumeBoundary: true
+  adaptive: false
+  rayTracing: true
+  anisotropicSurface: true
+  error_checking: true
+  resorting: compactMLM
+  support: constraineds
+  neighborhood: constrained
+  surfaceDetection: true
+surfaceDistance:
+  level_limit: -12.5
+adaptive:
+  resolution: 128
+  delay: 0.2
+
+color_map:
+  auto: 0
+  buffer: MLMResolution
+  min: 0
+  max: 3
+  map: RdYlBu
+  map_flipped: 1
+  mapping_mode: linear
+
+particleSetss:
+  set: 
+    -   sphereA.set
+    -   sphereB.set
+    -   sphereC.set
+particle_volumes:
+  volume:
+    -   fileName: Volumes/Sphere1.vdb
+    -   fileName: Volumes/Sphere2.vdb
+    -   fileName: Volumes/Sphere3.vdb
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/box.vdb
+        kind: 2
+
+particle_settings:
+  viscosity: 5
+  boundaryViscosity: 0.05
+  tension_akinci: 0.15
+  rigidAdhesion_akinci: 0
+  boundaryAdhesion_akinci: 0
+  gravity: 9.81
+  radius: 0.75
+
+render_settings:
+  camera_position: [-0.470795, -119.615, 98.4495]
+  camera_angle: [136.5, 0, 720]
+
+simulation_settings:
+  densitySteps: 5
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz-
+  domainWalls: xyz+
+  maxNumptcls: 6877217
+  boundaryDampening: 0.999
+  timestep_min: 0.001
+  timestep_max: 0.008
+  neighborlimit: 125

@@ -1,0 +1,64 @@
+modules:
+  adaptive: false
+  rayTracing: true
+  anisotropicSurface: true
+  surfaceDetection: false
+  error_checking: true
+  debug: false
+  drag: Gissler17
+  resorting: compactMLM
+  support: constraineds
+  hash_width: 64bit
+  neighborhood: constrained
+simulation_settings:
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz-
+  domainWalls: x+-y+-z-
+  numptcls: 3910000
+  boundaryDampening: 0.999
+  timestep_min: 0.001
+  timestep_max: 0.006
+  neighborlimit: 125
+
+particle_settings:
+  viscosity: 5
+  boundaryViscosity: 0.0375
+  tension_akinci: 0.05
+  rigidAdhesion_akinci: 0
+  boundaryAdhesion_akinci: 0
+  tension: 0.15
+  gravity: 9.81
+  radius: 0.35203504908994
+  density: 998
+surfaceDistance:
+  distanceFieldDistances: [0.0, 0.0, 1.5]
+adaptive:
+  resolution: 64
+  delay: 1.5
+
+color_map:
+  auto: 0
+  min: 0
+  max: 30
+  buffer: velocity
+  visualizeDirection: 0
+  vectorMode: length
+  map: viridis
+  map_flipped: 0
+  mapping_mode: linear
+
+inlet_volumes:
+  volume:
+    -   fileName: Volumes/FluidInlet.vdb
+        duration: 15
+        emitter_velocity: [0, 30, 0, 0]
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/Box.vdb
+        kind: 2
+    -   fileName: Volumes/Box2.vdb
+        kind: 2
+
+render_settings:
+  camera_position: [0, 0, 240]
+  camera_angle: [90, 0, 0]

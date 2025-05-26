@@ -1,0 +1,52 @@
+modules:
+  adaptive: true
+  rayTracing: false
+  anisotropicSurface: false
+  surfaceDetection: true
+  error_checking: true
+  resorting: compactMLM
+  support: constraineds
+  neighborhood: constrained
+  vorticity: no
+  drag: no
+
+adaptive:
+  resolution: 32
+  delay: 1
+
+color_map:
+  auto: 1
+  buffer: lifetime
+  min: 0
+  max: 30
+  map: magma
+  map_flipped: 1
+
+inlet_volumes:
+  volume:
+    -   fileName: Volumes/Fluid.vdb
+        duration: 10
+        delay: 0
+        emitter_velocity: [0, 20, 0, 0]
+
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/pillars.vdb
+        kind: 2
+
+particle_settings:
+  radius: 0.5
+  tension_akinci: 0.15
+
+render_settings:
+  anisotropicKs: 1.45
+  anisotropicKn: 0.5
+  camera_position: [70.7539, 39.5768, 60.3006]
+  camera_angle: [160.5, 0, -124]
+
+simulation_settings:
+  boundaryObject: Objects/domain.obj
+  maxNumptcls: 370900
+  timestep_min: 0.0001
+  timestep_max: 0.006
+  neighborlimit: 120

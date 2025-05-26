@@ -1,0 +1,179 @@
+{
+  "modules": {
+    "pressure": "DFSPH",
+    "adaptive": false,
+    "rayTracing": true,
+    "anisotropicSurface": true,
+    "error_checking": true,
+    "drag": "Gissler17",
+    "vorticity": "Liu",
+    "resorting": "compactMLM",
+    "tension": "Akinci",
+    "support": "constrained",
+    "neighborhood": "constrained",
+    "neighborSorting": 0,
+    "alembic": false
+  },
+  "surfaceDistance": {
+    "distanceFieldDistances": "0.0 0.0 1.5",
+    "level_limit": "-15.f"
+  },
+  "adaptive": {
+    "resolution": 128,
+    "delay": 1.2
+  },
+  "color_map": {
+    "auto": 1,
+    "buffer": "auxDistance",
+    "min": 0,
+    "max": 3,
+    "map": "RdYlBu",
+    "map_flipped": 0,
+    "mapping_mode": "linear"
+  },
+  "color_maps": {
+    "auto": 0,
+    "buffer": "velocity",
+    "visualizeDirection": 0,
+    "min": 0,
+    "max": 30,
+    "map": "viridis",
+    "map_flipped": 0,
+    "mapping_mode": "linear"
+  },
+  "particle_volumes": {
+    "volume1": {
+      "file": "Volumes/DamBreak.vdb",
+      "concentration": 0.0,
+      "timeToEmit": 0.0,
+      "kind": "vdb"
+    }
+  },
+  "boundary_volumes": {
+    "volume1": {
+      "file": "Volumes/Dragon2.vdb",
+      "position": "0 0 0",
+      "angle": "0 0 0",
+      "kind": 2,
+      "density": "998"
+    }
+  },
+  "particle_settings": {
+    "tension_akinci": 0.15,
+    "radius": 0.3503504908994
+  },
+  "rtxScene": {
+    "box1": {
+      "maxPosition": "2000 1000 800",
+      "minPosition": "-1000 -512 -1",
+      "emission": "1 1 1",
+      "color": "1 1 1",
+      "material": 0
+    },
+    "box2": {
+      "maxPosition": "128 256 128",
+      "minPosition": "-64 -256 -256",
+      "emission": "0 0 0",
+      "color": "1 1 1",
+      "material": 0
+    },
+    "boxs1": {
+      "maxPosition": "FLT_MAX FLT_MAX -1",
+      "minPosition": "-FLT_MAX -FLT_MAX -4",
+      "emission": "0 0 0",
+      "color": "0.2 0.2 0.2",
+      "material": 0
+    },
+    "boxs2": {
+      "maxPosition": "256 256 256",
+      "minPosition": "-256 -FLT_MAX -256",
+      "emission": "0.8 0.8 0.8",
+      "color": "1 1 1",
+      "material": 0
+    },
+    "sphere1": {
+      "position": "50 0 50",
+      "radius": "10",
+      "emission": "0.55 0.55 0.55",
+      "color": "0.075 0.075 0.075",
+      "material": 1
+    },
+    "sphere2": {
+      "position": "0 0 50",
+      "radius": "25",
+      "emission": "0 0 0",
+      "color": "1 1 1",
+      "material": 3
+    }
+  },
+  "render_settings": {
+    "vrtxWmin": 0.586,
+    "vrtxR": 0.276,
+    "anisotropicKs": 1.45,
+    "anisotropicKr": 4.0,
+    "anisotropicKn": 0.350,
+    "anisotropicLambda": 0.95,
+    "anisotropicNepsilon": "35",
+    "apertureRadius": "0.25f",
+    "focalDistance": "125.f",
+    "vrtxRenderFluid": "1",
+    "vrtxRenderSurface": "1",
+    "vrtxRenderGrid": 1,
+    "vrtxNeighborLimit": 0,
+    "vrtxRenderNormals": "0",
+    "vrtxRenderBVH": "1",
+    "vrtxRenderMode": "0",
+    "vrtxDisplayStats": "0",
+    "vrtxMaterialg": "4",
+    "vrtxBouncesg": "10",
+    "vrtxMaterial": "1",
+    "vrtxBounces": "5",
+    "vrtxDebeerScalde": "0.056",
+    "vrtxDomainEpsilon": "-3.75",
+    "renderSteps": 35,
+    "vrtxBVHMaterial": "3",
+    "vrtxFluidColord": "1 1 1",
+    "bvhColor": "0.71 0.545 0.283",
+    "vrtxDebeer": "0 0 0",
+    "vrtxFluidColor": "0.359 0.6 0.903",
+    "vrtxFluidColor3": "0.05098 0.23137 0.494177",
+    "vrtxIOR": "1.3f",
+    "internalLimit": 40.0,
+    "camera_position_PG": "103.157 86.3401 45.4527",
+    "camera_angle_PG": "170.5 0 -133",
+
+    "camera_positions": "42.2844 95.2644 36.2681",
+    "camera_angles": "142.5 0 -126",
+
+    "camera_positiond": "97.1828 89.3888 58.8259",
+    "camera_angled": "167.5 0 -125",
+    "scamera_position": "73.519 46.4727 48.1258",
+    "scamera_angle": "162 0 -105",
+
+    "camera_position": "-53.5613 -84.7356 56.4722",
+    "camera_angle": "164 0 48.5",
+
+    "camera_positionr": "-19.0068 -31.7941 34.4254",
+    "camera_angler": "161.5 0 26.5",
+    "camera_position3": "-23.6093 -104.898 67.548",
+    "camera_angle3": "161.5 0 26.5",
+    "renderdSteps": 24,
+    "camera_fps": 60,
+    "resolution": "1920 1080",
+    "gl_file": "adapt_break2.mp4"
+  },
+  "simulation_settings": {
+    "densitySteps": 5,
+    "boundaryObject": "Objects/domainL.obj",
+    "domainWall": "xyz-",
+    "domainWalls": "x+-y+-z-",
+    "numptcls": 2619000,
+    "auto_boundary": "true",
+    "boundaryDampening": 0.999,
+    "timestep_min": 0.00005,
+    "timestep_max": 0.004,
+    "neighborlimit": 125,
+    "LUTOffset": -0.0,
+    "external_force": "0 0 -9.8 0"
+  }
+}

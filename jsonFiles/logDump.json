@@ -1,0 +1,28 @@
+{
+  "functions":{
+    "logDump": {
+      "description": "Log physical quantities of the simulation. Pressure, velocity, height, density",
+      "folder": "logDump",
+      "name": "logDump",  
+      "target": "cuda",
+      "units": false,
+      "cell_info": false,
+      "neighbor_info": false,
+      "functions": [ "log_dump", "create_log_folder" ],
+        "parameters": [ "folderName" ],
+      "input": [ ],
+      "temporary": [ ],
+      "output": [ ],
+      "swap": [ ]
+    }
+  },
+  "uniforms": {
+    "modules": {
+      "logDump": {
+        "name": "Used to enable/disable log dump of physical quantities.",
+        "type": "std::string",
+        "default": "none"
+      }
+    }
+  }  
+}    

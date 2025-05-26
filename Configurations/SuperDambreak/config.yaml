@@ -1,0 +1,45 @@
+modules:
+  alembic: false
+  pressure: DFSPH
+  adaptive: false
+  rayTracing: true
+  error_checking: true
+  resorting: compactMLM
+  support: constrained
+  neighborhood: constrained
+adaptive:
+  resolution: 32
+  delay: 5
+
+color_map:
+  auto: 0
+  buffer: velocity
+  min: 0
+  max: 40
+  map: viridis
+
+particle_volumes:
+  volume:
+    -   fileName: Volumes/Adaptive.vdb
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/pillars.vdb
+        kind: 2
+particle_settings:
+  tension_akinci: 0.5
+  radius: 1
+render_settings:
+  camera_position: [-281.15, 19.9379, 139.307]
+  camera_angle: [180, 0, 90]
+
+simulation_settings:
+  densitySteps: 5
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz-
+  domainWalls: x+-y+-z+-
+  numptcls: 7009000
+  auto_boundary: 'true'
+  boundaryDampening: 0.999
+  timestep_min: 0.0001
+  timestep_max: 0.005
+  neighborlimit: 70

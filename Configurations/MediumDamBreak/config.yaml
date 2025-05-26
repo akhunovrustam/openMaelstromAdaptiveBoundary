@@ -1,0 +1,48 @@
+modules:
+  pressure: DFSPH
+  adaptive: false
+  rayTracing: true
+  error_checking: true
+  resorting: compactMLM
+  drag: none
+  support: constrained
+  vorticity: none
+  neighborhood: constrained
+
+adaptive:
+  resolution: 32
+  delay: 1.5
+color_map:
+  autoScaling: 0
+  buffer: velocity
+  min: 0
+  max: 30
+  map: viridis
+particle_volumes:
+  volume:
+    -   fileName: Volumes/Fluid.vdb
+boundary_volumess:
+  volume:
+    -   fileName: Volumes/box.vdb
+        kind: 2
+particle_settings:
+  radius: 0.5
+  boundaryViscosity: 0.0
+  xsph_viscosity: 0.0
+  akinciTension: 0.25
+
+render_settings:
+  camera_position: [-125, -0.5, 55.5]
+  camera_angle: [180, 0, 90]
+
+simulation_settings:
+  densitySteps: 5
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz-
+  domainWalls: x+-y+-z+-
+  maxNumptcls: 7009000
+  auto_boundary: 'true'
+  boundaryDampening: 0.999
+  timestep_min: 0.0001
+  timestep_max: 0.004
+  neighborlimit: 120

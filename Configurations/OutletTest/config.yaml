@@ -1,0 +1,51 @@
+modules:
+  alembic: false
+  pressure: DFSPH
+  adaptive: true
+  rayTracing: true
+  error_checking: true
+  drag: Gissler17
+  resorting: compactMLM
+  support: constrained
+  neighborhood: constrained
+  volumeOutlets: true
+
+adaptive:
+  resolution: 32
+  delay: 1
+color_map:
+  auto: 0
+  buffer: velocity
+  min: 0
+  max: 30
+  map: viridis
+
+inlet_volumes:
+  volume:
+    -   fileName: Volumes/Inlet.vdb
+        duration: -1
+        delay: 0
+        emitter_velocity: [-10, 25, 0, 0]
+outlet_volumes:
+  volume:
+    -   fileName: Volumes/Outlet.vdb
+        rate: 1350
+
+particle_settings:
+  radius: 0.45
+
+render_settings:
+  camera_position: [-80.3605, -54.7713, 81.2583]
+  camera_angle: [148.5, 0, 58]
+
+simulation_settings:
+  densitySteps: 5
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz-
+  domainWalls: x+-y+-z+-
+  maxNumptcls: 790000
+  auto_boundary: 'true'
+  boundaryDampening: 0.999
+  timestep_min: 0.0001
+  timestep_max: 0.01
+  neighborlimit: 70

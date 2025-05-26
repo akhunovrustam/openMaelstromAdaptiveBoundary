@@ -1,0 +1,264 @@
+adaptive:
+  adaptivityGamma: 0.100000001
+  adaptivityScaling: 0.824999988
+  adaptivityThreshold: 1
+  blendSteps: 10
+  blendedPtcls: 0
+  delay: 0.200000003
+  detailedAdaptiveStatistics: 1
+  mergedPtcls:
+    - 0
+  minVolume: 1
+  ratio: 1
+  resolution: 32
+  sharedPtcls:
+    - 0
+  splitPtcls:
+    - 0
+  useVolume: 1
+alembic:
+  file_name: export/alembic_$f.abc
+  fps: 24
+boundary_volumes:
+  volume:
+    - fileName: Volumes/pillars.vdb
+      density: 998
+      position: [0, 0, 0]
+      velocity: [0, 0, 0]
+      angularVelocity: [1.57079637, 0, 0, 0]
+      angle: [0, 0, 0]
+      kind: 2
+      animationPath: ""
+  volumeBoundaryCounter: 1
+camera:
+  perspective: [0.97427851, 0, 0, 0, 0, 1.73205066, 0, 0, 0, 0, -1.00000322, -1, 0, 0, -0.200000316, 0]
+  view: [0.492423505, -0.283361048, 0.822937191, 0, 0.870355725, 0.160317943, -0.465595365, 0, -0, 0.945518196, 0.325569242, 0, -6.36066437, -26.2402916, -96.6528625, 1]
+color_map:
+  autoScaling: 1
+  buffer: veloc
+  map: viridis
+  map_flipped: 1
+  mapping_fn: 0
+  mapping_mode: linear
+  max: 1.0127151
+  min: 0.555528224
+  pruneVoxel: 0
+  transfer_fn: 0
+  transfer_mode: linear
+  vectorMode: length
+  vectorScale: 1
+  vectorScaling: 0
+  visualizeDirection: 0
+dfsph_settings:
+  densityError: 9.92355999e-05
+  densityEta: 9.99999975e-05
+  densitySolverIterations: 10
+  divergenceError: 4.61239279e-06
+  divergenceEta: 0.00100000005
+  divergenceSolverIterations: 2
+iisph_settings:
+  density_error: 0
+  eta: 0.100000001
+  iterations: 0
+  jacobi_omega: 0.200000003
+inlet_volumes:
+  volume: ~
+internal:
+  binary_directory: /home/winchenbach/dev/MaelstromDev-original/build/bin/
+  boundaryCounter: 5
+  boundaryLUTSize: 1024
+  build_directory: /home/winchenbach/dev/MaelstromDev-original/build
+  cell_ordering: z_order
+  cell_size: [1.84201574, 1.84201574, 1.84201574]
+  cell_structure: compactMLM
+  config_file: ./Configurations//WaveBasin/config.yaml
+  config_folder: ./Configurations//WaveBasin/
+  dumpForSSSPH: 0
+  dumpNextframe: 0
+  frame: 195
+  gridSize: [33, 84, 17]
+  hash_size: bit_64
+  max_coord: [30.3799686, 76.0357666, 27.0211124]
+  max_domain: [25, 75, 50]
+  max_velocity: 13.5919962
+  min_coord: [-30.5260468, -80.5260468, -5.52604723]
+  min_domain: [-25, -75, 0]
+  neighborhood_kind: constrained
+  num_ptcls: 211524
+  ptcl_spacing: 0.451475024
+  ptcl_support: 1.00891352
+  simulationTime: 0.777500868
+  source_directory: /home/winchenbach/dev/MaelstromDev-original
+  target: device
+  timestep: 0.00400000019
+  working_directory: /home/winchenbach/dev/MaelstromDev-original
+modules:
+  adaptive: false
+  alembic: false
+  anisotropicSurface: false
+  debug: false
+  density: standard
+  drag: Gissler17
+  error_checking: true
+  gl_record: false
+  hash_width: 64bit
+  launch_cfg: device
+  movingBoundaries: true
+  neighborSorting: false
+  neighborhood: constrained
+  particleCleanUp: false
+  pressure: DFSPH
+  rayTracing: true
+  regex_cfg: false
+  renderMode: 0
+  resorting: compactMLM
+  support: constrained
+  surfaceDetection: true
+  surfaceDistance: false
+  tension: Akinci
+  viscosity: false
+  volumeBoundary: true
+  volumeInlets: false
+  volumeOutlets: false
+  vorticity: Bender17
+  xsph: true
+moving_plane:
+  plane:
+    - plane_position: [0, -75, 0]
+      plane_normal: [0, -1, 0]
+      plane_direction: [0, 1, 0]
+      duration: -1
+      magnitude: 10
+      frequency: 0.100000001
+      index: 4
+outlet_volumes:
+  volume: ~
+  volumeOutletCounter: 0
+  volumeOutletTime: -1
+particleSets:
+  set:
+    []
+particle_settings:
+  air_velocity: [0, 0, 0, 0]
+  boundaryAdhesion_akinci: 0
+  boundaryViscosity: 0.0375000015
+  monaghan_viscosity: 5
+  radius: 0.5
+  rest_density: 998
+  rigidAdhesion_akinci: 0
+  tension_akinci: 0.150000006
+  xsph_viscosity: 0.0500000007
+particle_volumes:
+  volume:
+    - fileName: Volumes/Fluid.vdb
+      kind: ""
+      concentration: 0
+      timeToEmit: 0
+renderTime: 71.950325
+render_settings:
+  anisotropicKn: 0.188805997
+  anisotropicKr: 4
+  anisotropicKs: 1
+  anisotropicLambda: 0.980198026
+  anisotropicNepsilon: 40
+  apertureRadius: 0.150000006
+  auxCellCount: 19301
+  auxScale: 1
+  axesRender: 1
+  axesScale: 1
+  boundsRender: 1
+  bvhColor: [0.565999985, 0.620999992, 0.640999973]
+  camera_angle: [161, 0, -60.5]
+  camera_fov: 96
+  camera_fps: 60
+  camera_position: [75.2359009, -35.2583008, 52.6296997]
+  camera_resolution: [1920, 1080]
+  floorRender: 1
+  focalDistance: 58
+  gl_file: gl.mp4
+  internalLimit: 40
+  maxAnisotropicSupport: [1.84201574, 1.84201574, 1.84201574, 1.84201574]
+  renderSteps: 25
+  render_clamp: [0, 0, 0]
+  vrtxBVHMaterial: 1
+  vrtxBounces: 5
+  vrtxDebeer: [0.949020028, 0.768630028, 0.505823016]
+  vrtxDebeerScale: 0.0560000017
+  vrtxDepth: 0
+  vrtxDepthScale: 0.100000001
+  vrtxDisplayStats: 0
+  vrtxDomainEpsilon: -1.76206303
+  vrtxDomainMax: [25.5, 3.40282347e+38, 3.40282347e+38]
+  vrtxDomainMin: [-25.5, -75.5, -0.5]
+  vrtxFlipCameraUp: 0
+  vrtxFluidBias: 0.0500000007
+  vrtxFluidColor: [1, 1, 1]
+  vrtxIOR: 1.29999995
+  vrtxMaterial: 0
+  vrtxNeighborLimit: 0
+  vrtxR: 0.586000025
+  vrtxRenderBVH: 1
+  vrtxRenderDomainMax: [100, 70.3068237, 200]
+  vrtxRenderDomainMin: [-100, -100, 0]
+  vrtxRenderFluid: 1
+  vrtxRenderGrid: 0
+  vrtxRenderMode: 0
+  vrtxRenderNormals: 0
+  vrtxRenderSurface: 0
+  vrtxSurfaceExtraction: 0
+  vrtxWMax: 2
+  vrtxWMin: 0.400000006
+resort:
+  auxCells: 19301
+  auxCollisions: 6605
+  collision_cells: 0
+  occupiedCells:
+    - 19301
+  resort_algorithm: 3
+  valid_cells: 0
+  zOrderScale: 0.000122070312
+rigid_volumes:
+  beta: 0.100000001
+  gamma: 0.699999988
+  volume: ~
+rtxScene:
+  box: ~
+  sphere: ~
+simTime: 66.2269974
+simulation_settings:
+  LUTOffset: 0
+  boundaryDampening: 0.970000029
+  boundaryObject: Objects/domain.obj
+  debugRegex: ""
+  densitySteps: 10
+  deviceRegex: ""
+  domainWalls: x+-y-z-
+  dumpFile: simulation.dump
+  external_force: [0, 0, -9.80000019, 0]
+  hash_entries: 7090001
+  hostRegex: ""
+  maxNumptcls: 7090000
+  mlm_schemes: 1
+  neighborlimit: 120
+  timestep_max: 0.00400000019
+  timestep_min: 0.00100000005
+stylePath: cfg/style.css
+support:
+  adjusted_particles: 0
+  error_factor: 3
+  omega: 0.970000029
+  overhead_size: 709000
+  support_current_iteration: 0
+  support_leeway: 69
+  target_neighbors: 50
+surfaceDistance:
+  surface_distanceFieldDistances: [0, 0, 1.5]
+  surface_iterations: 13
+  surface_levelLimit: -20
+  surface_neighborLimit: 40
+  surface_phiChange: 0
+  surface_phiMin: 0
+vorticitySettings:
+  intertiaInverse: 0.5
+  viscosityOmega: 0.100000001
+  vorticityCoeff: 0.0500000007

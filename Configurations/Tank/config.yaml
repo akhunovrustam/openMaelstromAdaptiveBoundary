@@ -1,0 +1,68 @@
+modules:
+  adaptive: false
+  movingBoundaries: true
+  rayTracing: true
+  surfaceDetection: true
+  anisotropicSurface: false
+  error_checking: true
+  resorting: compactMLM
+  support: constrained
+  neighborhood: constrained
+adaptive:
+  resolution: 32
+  delay: 0.2
+
+ssurfaceDistance:
+    surface_distanceFieldDistances: [0.5,0.5,0.5]
+
+color_map:
+  autoScaling: 0
+  buffer: velocity
+  min: 0
+  max: 30
+  map: viridis
+  map_flipped: 0
+  mapping_mode: linear
+
+particle_volumes:
+  volume:
+    -   fileName: Volumes/Fluid.vdb
+        velocity: [0, 20, 0]
+moving_planes:
+  plane:
+    -   plane_position: [0, -75, 0]
+        plane_normal: [0, -1, 0.1]
+        plane_direction: [0, 1, 0]
+        magnitude: 25
+        frequency: .1
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/pillars.vdb
+        kind: 2
+        angularVelocity: [0, 0, 0, 0]
+particle_settings:
+  sboundaryViscosity: 0.0
+  tension_akinci: 0.15
+  radius: 0.5
+render_settings:
+  dcamera_position: [59.5769, -22.7472, 54.6092]
+  dcamera_angle: [157, 0, -59]
+  vrtxFluidColor: [1, 1, 1]
+  vrtxRenderDomainMin: [-100, -100, -25]
+  vrtxRenderSurface: 0
+  focalDistance: 58
+  vrtxDisplayStats: 0
+  vrtxRenderBVH: 0
+  camera_position: [93.4644, -62.4547, 42.7082]
+  camera_angle: [161, 0, -60.5]
+
+
+simulation_settings:
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz
+  domainWalls: xyz
+  maxNumptcls: 7090000
+  timestep_min: 0.001
+  timestep_max: 0.004
+  neighborlimit: 120
+  external_force: [0, 0, -9.8, 0]

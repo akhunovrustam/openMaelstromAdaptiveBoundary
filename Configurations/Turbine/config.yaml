@@ -1,0 +1,50 @@
+modules:
+  pressure: DFSPH
+  volumeBoundary: true
+  volumeOutlets: true
+  adaptive: false
+  rayTracing: true
+  resorting: compactMLM
+  support: none
+  neighborhood: constrained
+adaptive:
+  resolution: 32
+  delay: 1
+
+color_map:
+  auto: 0
+  buffer: velocity
+  min: 0
+  max: 40
+  map: viridis
+inlet_volumes:
+  volume:
+    -   fileName: Volumes/Fluid.vdb
+        emitter_velocity: [-30, 0, 0, 0]
+outlet_volumes:
+  volume1:
+    -   fileName: Volumes/Outlet.vdb
+    
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/twister.vdb
+        kind: 2
+    -   fileName: Volumes/pillars.vdb
+        kind: 1
+particle_settings:
+  radius: 0.3
+
+render_settings:
+  camera_position: [6.18045, 5.02403, 98.879]
+  camera_angle: [90, 0, 0]
+simulation_settings:
+  densitySteps: 5
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz-
+  domainWalls: x+-y+-z+-
+  maxNumptcls: 7090000
+  auto_boundary: 'true'
+  boundaryDampening: 0.999
+  timestep_min: 0.0001
+  timestep_max: 0.008
+  neighborlimit: 70

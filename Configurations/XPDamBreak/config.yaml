@@ -1,0 +1,186 @@
+modules:
+    alembic: true
+    pressure1: DFSPH
+    pressure: IISPH17_PRESSURE_BOUNDARIES_D
+    volumeBoundary: true
+    adaptive: true
+    gl_record: true
+    rayTracing: true
+    anisotropicSurface: false
+    error_checking: false
+    debug: false
+    drag: Gissler17
+    tension1: Akinci
+    resorting: compactMLM
+    support: constrained
+    hash_width: 64bit
+    neighborhood: constrained
+    launch_cfg: device
+    density: standard
+    neighborSorting: false
+
+support:
+    adjusted_particles: 0
+
+alembic_settings:
+    fps: 60
+
+simulation_settings:
+    densitySteps: 5
+    boundaryObject: Objects/domain2.obj
+    domainWalls1: y+z+-
+    domainWalls: y-
+    maxNumptcls: 2790000
+    auto_boundary: true
+    boudnaryDampening: 0.999
+    timestep_min: 0.0079
+    timestep_max: 0.008
+    neighborlimit: 65
+    external_force: [0, 0, -10, 0]
+
+vorticitySettings:
+    inertiaInverse: 0.5
+    viscosityOmega: 0.005
+    vorticityCoeff: 0.05
+
+    
+particle_settings:
+    radius: 0.45
+    radiuss: 0.35203504908994
+    density: 998
+    air_velocity: [0, 0, 0, 0]
+    max_neighbors: -1
+
+surfaceDistance:
+    distanceFieldDistances: [0.0, 0.0, 1.5]
+    level_limit: -7.5
+    surface_levelLimit: -20
+  
+adaptive: 
+    adaptivityGamma: 0.1
+    adaptivityScaling: 0.825
+    adaptivityThreshold: 1
+    
+    resolution: 32
+    distance: [4.0, 4.0, 2.0]
+    delay: 0.1
+    blendSteps: 10
+    limit: -20.0
+    useVolume: 1
+    
+color_mapvel: 
+    autoScaling: 0
+    min: 0
+    max: 30
+    buffer: velocity
+    visualizeDirection: 0
+    vectorMode: length
+    map: viridis
+    map_flipped: 0
+    mapping_mode: linear
+
+color_map: 
+    autoScaling: 0
+    min: 0
+    max: 50
+    buffer: velocity
+    visualizeDirection: 0
+    vectorMode: length
+    map: magma
+    map_flipped: 1
+    mapping_mode: linear
+
+particle_volumes:
+    volume: 
+        -   fileName: Volumes/FluidB.vdb
+            concentration: 0.0
+            timeToEmit: 0.0
+            kind: vdb
+            scale: [0.37, 0.3, 0.25]
+            shift: [9.2, 5.5, -9.7]
+            velocity: [0, 0, 0]
+        
+rigid_volumes: 
+    mesh_resolution: 30    
+    volume: 
+        -   fileName: Objects/dambreak.obj
+            concentration: 0.0
+            timeToEmit: 0.0
+            kind: vdb
+            init_velocity: [10, 11, 12]
+            ascale: [3, 3, 3]
+            ashift: [-170.5, -1.5, 0.0]
+            sampling: 0.7
+
+
+
+dfsph_settings: 
+    densityEta: 0.0001
+    divergenceEta: 0.001
+
+render_settings: 
+    vrtxWmin: 0.524
+    vrtxR: 0.35
+    vrtxWMax: 0.0075
+    anisotropicKs: 1.00
+    vrtxFluidBias: 0.05
+    aanisotropicKs: 1.45
+    avrtxFluidBias: 0.05f
+
+    floorRender: 0
+
+    anisotropicKr: 4.0000
+    anisotropicKn: 0.35
+    anisotropicLambda: 0.95
+    anisotropicNepsilon: 35
+    apertureRadius: 0.15
+    focalDistance: 120.
+    vrtxRenderFluid: 1
+    vrtxRenderGrid: 0
+    vrtxRenderSurface: 0
+    vrtxNeighborLimit: 0
+    vrtxRenderNormals: 0
+    renderSteps: 25
+
+    vrtxRenderBVH: 1
+    vrtxRenderMode: 0
+    vrtxDisplayStats: 0
+    vrtxMaterials: 4
+    vrtxBouncess: 15
+    vrtxMaterial: 1
+    vrtxBounces: 5
+    vrtxDebeerScale: 0.015
+    vrtxDomainEpsilon: -1.762063
+
+    vrtxBVHMaterial: 1
+    vrtxFluidColor: [0.152, 0.469, 0.772]
+    vrtxFluidColor3: [0.572, 0.724, 1]
+    vrtxFluidColor2: [0.05098, 0.23137, 0.494177]
+    vrtxIOR: 1.3
+    internalLimit: 40.0
+
+    camera_position0: [9.38473, -9.40075, -3.6947]
+    camera_angle0: [154, 0, -43]
+
+    camera_position2: [4.0, 1.8, -14.35]
+    camera_angle2: [254.5, 0, -25.5]
+
+    camera_position3: [4, 1.8, -14.35]
+    camera_angle3: [195.5, 0, -124]
+
+    camera_position4: [11.4713, -1.29206, -17.9331]
+    camera_angle4: [213.5, 0, -87]
+
+    camera_position5: [9.38473, -9.40075, 7.96882]
+    camera_angle5: [154, 0, -43]
+
+    camera_position: [40, 21, 9]
+    camera_angle: [170, 0, -90]
+
+    resolution: [1920, 1080]
+    max_coord: [10, 10, 10]
+    min_coord: [-10, -10, -10]
+    render_clamp: [0.60, 0, 0]
+    camera_fps: 60
+    gl_file: adapt_break2.mp4
+ 

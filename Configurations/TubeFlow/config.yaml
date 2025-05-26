@@ -1,0 +1,64 @@
+modules:
+  pressure: DFSPH
+  adaptive: false
+  rayTracing: true
+  anisotropicSurface: true
+  surfaceDetection: false
+  error_checking: true
+  debug: false
+  drag: Gissler17
+  vorticitys: Liusa
+  resorting: compactMLM
+  support: constraineds
+  hash_width: 64bit
+  neighborhood: constrained
+simulation_settings:
+  boundaryObject: Objects/domain.obj
+  domainWall: xyz-
+  domainWalls: x+-y+-z-
+  maxNumptcls: 3910000
+  boundaryDampening: 0.999
+  timestep_min: 0.001
+  timestep_max: 0.006
+  neighborlimit: 125
+
+particle_settings:
+  viscosity: 5
+  boundaryViscosity: 0.0375
+  tension_akinci: 0.15
+  rigidAdhesion_akinci: 0
+  boundaryAdhesion_akinci: 0
+  tension: 0.15
+  radius: 0.35203504908994
+
+adaptive:
+  resolution: 64
+color_map:
+  auto: 0
+  min: 0
+  max: 30
+  buffer: velocity
+  visualizeDirection: 0
+  vectorMode: length
+  map: viridis
+  map_flipped: 0
+  mapping_mode: linear
+
+inlet_volumes:
+  volume:
+    -   fileName: Volumes/FluidInlet.vdb
+        duration: 25
+        delay: 0
+        emitter_velocity: [-20, 20, 0, 0]
+outlet_volumes:
+  volume:
+    -   fileName: Volumes/FluidOutlet.vdb
+boundary_volumes:
+  volume:
+    -   fileName: Volumes/Box.vdb
+        kind: 2
+    -   fileName: Volumes/sphere.vdb
+        kind: 2
+render_settings:
+  camera_position: [0, -205, 95]
+  camera_angle: [145, 0, 0]

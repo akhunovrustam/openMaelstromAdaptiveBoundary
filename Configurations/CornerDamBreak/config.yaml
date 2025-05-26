@@ -1,0 +1,156 @@
+modules:
+    alembic: false
+    pressure: DFSPH
+    volumeBoundary: true
+    adaptive: true
+    gl_record: false
+    rayTracing: true
+    anisotropicSurface: false
+    error_checking: false
+    debug: false
+    drag: Gissler17
+    vorticitys: Lius
+    tension: Akinci
+    resorting: compactMLM
+    support: constrained
+    hash_width: 64bit
+    neighborhood: constrained
+    launch_cfg: device
+    density: standard
+    neighborSorting: false
+
+support:
+    adjusted_particles: 0
+
+alembic_settings:
+    fps: 60
+
+simulation_settings:
+    densitySteps: 5
+    boundaryObject: Objects/domain.obj
+    domainWalls: x+-y+-z+-
+    maxNumptcls: 2790000
+    auto_boundary: true
+    boudnaryDampening: 0.999
+    timestep_min: 0.0005
+    timestep_max: 0.008
+    neighborlimit: 65
+    external_force: [0, 0, -9.8, 0]
+
+vorticitySettings:
+    inertiaInverse: 0.5
+    viscosityOmega: 0.005
+    vorticityCoeff: 0.05
+
+    
+particle_settings:
+    radius: 0.5
+    radiuss: 0.35203504908994
+    density: 998
+    air_velocity: [0, 0, 0, 0]
+    
+surfaceDistance:
+    distanceFieldDistances: [0.0, 0.0, 1.5]
+    level_limit: -17.5
+  
+adaptive: 
+    resolution: 32
+    distance: [4.0, 4.0, 2.0]
+    delay: 1.50
+    blendSteps: 10
+    limit: -20.0
+    useVolume: 1
+    
+color_mapvel: 
+    autoScaling: 0
+    min: 0
+    max: 30
+    buffer: velocity
+    visualizeDirection: 0
+    vectorMode: length
+    map: viridis
+    map_flipped: 0
+    mapping_mode: linear
+
+  
+color_map: 
+    autoScaling: 1
+    min: 0
+    max: 30
+    buffer: neighborListLength
+    visualizeDirection: 0
+    vectorMode: length
+    map: magma
+    map_flipped: 1
+    mapping_mode: linear
+
+
+particle_volumes: 
+    volume: 
+        -   fileName: Volumes/FluidB.vdb
+            concentration: 0.0
+            timeToEmit: 0.0
+            kind: vdb
+boundary_volumes:
+    volume: 
+        -   fileName: Volumes/boxesCorner.vdb
+            kind: 2
+            position: [0, 0, 0]
+            angle: [0, 0, 0]
+
+dfsph_settings: 
+    densityEta: 0.0001
+    divergenceEta: 0.001
+
+render_settings: 
+    vrtxWmin: 0.524
+    vrtxR: 0.35
+    vrtxWMax: 0.0075
+    anisotropicKs: 1.00
+    vrtxFluidBias: 0.05
+    aanisotropicKs: 1.45
+    avrtxFluidBias: 0.05f
+
+    floorRender: 1
+
+    anisotropicKr: 4.0000
+    anisotropicKn: 0.35
+    anisotropicLambda: 0.95
+    anisotropicNepsilon: 35
+    apertureRadius: 0.15
+    focalDistance: 120.
+    vrtxRenderFluid: 1
+    vrtxRenderGrid: 0
+    vrtxRenderSurface: 0
+    vrtxNeighborLimit: 0
+    vrtxRenderNormals: 0
+    renderSteps: 25
+
+    vrtxRenderBVH: 1
+    vrtxRenderMode: 0
+    vrtxDisplayStats: 0
+    vrtxMaterials: 4
+    vrtxBouncess: 15
+    vrtxMaterial: 1
+    vrtxBounces: 5
+    vrtxDebeerScale: 0.015
+    vrtxDomainEpsilon: -1.762063
+
+    vrtxBVHMaterial: 1
+    vrtxFluidColor: [0.152, 0.469, 0.772]
+    vrtxFluidColor3: [0.572, 0.724, 1]
+    vrtxFluidColor2: [0.05098, 0.23137, 0.494177]
+    vrtxIOR: 1.3
+    internalLimit: 40.0
+
+    camera_positions: [5, 0, 0]
+    camera_angles: [180, 0, -90]
+    camera_positionn: [83.527, -41.5787, 97.4448]
+    camera_anglen: [139.5, 0, 301]
+    camera_position: [-96.9604, -35.054, 63.3338]
+    camera_angle: [165.5, 7.10276e-41, 67]
+    resolution: [1920, 1080]
+    render_clamp: [0, 0, 0]
+    camera_fps: 60
+    gl_file: adapt_break2.mp4
+ 
